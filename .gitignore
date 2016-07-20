@@ -1,2 +1,3 @@
 .gitignore
 /WebApp/src/WebApp/node_modules
+/WebApp/src/WebApp/wwwroot/lib
