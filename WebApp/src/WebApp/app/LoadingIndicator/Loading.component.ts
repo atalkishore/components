@@ -1,16 +1,14 @@
-﻿/// <reference path="loading.service.ts" />
-import {Component, ElementRef, OnInit, OnDestroy} from '@angular/core';
+﻿import {Component, ElementRef, OnInit, OnDestroy} from '@angular/core';
 import {CORE_DIRECTIVES} from '@angular/common';
-import {LoadingService} from "./loading.service";
+import { LoadingService } from "./loadindicator.service";
+import { StatsOverviewPage} from "./page.component";
 
 @Component({
     selector: 'loading-indicator',
     directives: [CORE_DIRECTIVES],
     template: `
-       <div [style.visibility]="isLoading ? 'visible': 'hidden'" class="loading-indicator-container">
-           <div class="bullet-one"></div>
-           <div class="bullet-two"></div>
-           <div class="bullet-three"></div>
+       <div [style.visibility]="isLoading ? 'visible': 'hidden'" class="loading-indicator-container">           
+            <img src="/images/loading.gif" />
        </div>
       `,
 })
@@ -32,9 +30,11 @@ export class LoadingIndicator implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.loadingService.loading$.subscribe(loading => this.showOrHideLoadingIndicator(loading));
+        debugger;
+        this.subscription = this.loadingService.loading$.subscribe(loading => { debugger; this.showOrHideLoadingIndicator(loading) });
     }
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
+}

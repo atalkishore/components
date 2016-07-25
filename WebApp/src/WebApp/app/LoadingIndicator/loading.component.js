@@ -5,8 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var core_1 = require('angular2/core');
-var common_1 = require('angular2/common');
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
+var loadindicator_service_1 = require("./loadindicator.service");
 var LoadingIndicator = (function () {
     //we probably want a reference to ElementRef here to do some DOM manipulations
     function LoadingIndicator(el, loadingService) {
@@ -25,7 +29,8 @@ var LoadingIndicator = (function () {
     };
     LoadingIndicator.prototype.ngOnInit = function () {
         var _this = this;
-        this.subscription = this.loadingService.loading$.subscribe(function (loading) { return _this.showOrHideLoadingIndicator(loading); });
+        debugger;
+        this.subscription = this.loadingService.loading$.subscribe(function (loading) { debugger; _this.showOrHideLoadingIndicator(loading); });
     };
     LoadingIndicator.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
@@ -34,9 +39,11 @@ var LoadingIndicator = (function () {
         core_1.Component({
             selector: 'loading-indicator',
             directives: [common_1.CORE_DIRECTIVES],
-            template: "\n       <div [style.visibility]=\"isLoading ? 'visible': 'hidden'\" class=\"loading-indicator-container\">\n           <div class=\"bullet-one\"></div>\n           <div class=\"bullet-two\"></div>\n           <div class=\"bullet-three\"></div>\n       </div>\n      ",
-        })
+            template: "\n       <div [style.visibility]=\"isLoading ? 'visible': 'hidden'\" class=\"loading-indicator-container\">           \n            <img src=\"/images/loading.gif\" />\n       </div>\n      ",
+        }), 
+        __metadata('design:paramtypes', [core_1.ElementRef, loadindicator_service_1.LoadingService])
     ], LoadingIndicator);
     return LoadingIndicator;
 }());
 exports.LoadingIndicator = LoadingIndicator;
+//# sourceMappingURL=loading.component.js.map

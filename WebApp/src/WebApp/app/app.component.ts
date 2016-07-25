@@ -1,16 +1,17 @@
 import { Component }          from '@angular/core';
 import { ROUTER_DIRECTIVES }  from '@angular/router';
 
+import { LoadingService } from "./loadingindicator/loadindicator.service";
 
 @Component({
   selector: 'my-app',
-
   template: `
-    <h1>App</h1>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [LoadingService]
 })
 export class AppComponent {
+    constructor(public loadingService: LoadingService) { }
+
 }

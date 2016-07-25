@@ -1,7 +1,7 @@
-import { provideRouter, RouterConfig }  from '@angular/router';
-import { StatsOverviewPage }  from "./loadingindicator/page.component";
-
-export const routes: RouterConfig = [
+"use strict";
+var router_1 = require('@angular/router');
+var page_component_1 = require("./loadingindicator/page.component");
+exports.routes = [
     {
         path: '',
         redirectTo: '/loadingindicator',
@@ -9,17 +9,15 @@ export const routes: RouterConfig = [
     },
     {
         path: 'loadingindicator',
-        component: StatsOverviewPage
+        component: page_component_1.StatsOverviewPage
     },
 ];
-
-export const APP_ROUTER_PROVIDERS = [
-    provideRouter(routes)
+exports.APP_ROUTER_PROVIDERS = [
+    router_1.provideRouter(exports.routes)
 ];
-
-
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/
+*/ 
+//# sourceMappingURL=app.routes.js.map

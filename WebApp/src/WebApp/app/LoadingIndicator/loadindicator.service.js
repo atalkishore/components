@@ -7,7 +7,7 @@ require('rxjs/add/operator/share');
 var LoadingService = (function () {
     function LoadingService() {
         var _this = this;
-        this.loading$ = new Observable_1.Observable(function (observer) { return _this._observer = observer; }).share();
+        this.loading$ = new Observable_1.Observable(function (observer) { return _this._observer = observer; });
     }
     LoadingService.prototype.toggleLoadingIndicator = function (name) {
         if (this._observer) {
@@ -17,4 +17,4 @@ var LoadingService = (function () {
     return LoadingService;
 }());
 exports.LoadingService = LoadingService;
-;
+//# sourceMappingURL=loadindicator.service.js.map

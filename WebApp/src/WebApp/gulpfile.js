@@ -21,44 +21,72 @@ var paths = {
 
 
 var pathsAngular = {
-    scripts: ['views/**/*.js', 'views/**/*.ts', 'views/**/*.map', 'views/*.js', 'views/*.ts', 'views/*.map'],
+    scripts: ['app/**/*.js', 'app/**/*.ts', 'app/**/*.map', 'app/*.js', 'app/*.ts', 'app/*.map'],
+    copy: ['app/**/*.js', 'app/*.js'],
     libs: ['node_modules/angular2/bundles/angular2.js',
            'node_modules/angular2/bundles/angular2-polyfills.js',
            'node_modules/systemjs/dist/system.src.js',
            'node_modules/rxjs/bundles/Rx.js'
-    , 'node_modules/core-js/client/shim.min.js', 'node_modules/zone.js/dist/zone.js', 'node_modules/reflect-metadata', 'node_modules/systemjs/dist/system.src.js']
+    , 'node_modules/core-js/client/shim.min.js', 'node_modules/zone.js/dist/zone.js', 'node_modules/reflect-metadata/Reflect.js', 'node_modules/systemjs/dist/system.src.js']
 };
-
-gulp.task('lib:ang', function () {
-    gulp.src(pathsAngular.libs).pipe(gulp.dest('wwwroot/lib'))
-});
 
 gulp.task('copy:ang', function () {
-    gulp.src(pathsAngular.scripts).pipe(gulp.dest('wwwroot/app'))    
+    gulp.src(pathsAngular.copy).pipe(gulp.dest('wwwroot/app'))
 })
-gulp.task('default:ang', ['lib:ang', 'copy:ang'], function () {
-    
-});
 gulp.task('watch:ang', function () {
-    gulp.watch('views/**/*.ts', ['copy:ang']);
-})
+    gulp.watch(pathsAngular.scripts, ['copy:ang']);
 
-var plunk = {
-    scripts: ['plunk/**/*.js', 'plunk/**/*.ts', 'plunk/**/*.map', 'plunk/*.js', 'plunk/*.ts', 'plunk/*.map'],
-    libs: ['node_modules/angular2/bundles/angular2.js',
-           'node_modules/angular2/bundles/angular2-polyfills.js',
-           'node_modules/systemjs/dist/system.src.js',
-           'node_modules/rxjs/bundles/Rx.js'
-    , 'node_modules/core-js/client/shim.min.js', 'node_modules/zone.js', 'node_modules/reflect-metadata', 'node_modules/systemjs/dist/system.src.js'],
-    html: ['plunk/**/*.html','plunk/*.html'],
+});
+
+var pathshtml = {
+    scripts: ['app/**/*.html', 'app/*.html'],
+   
 };
-gulp.task('copy:plunk', function () {
-    gulp.src(plunk.scripts).pipe(gulp.dest('wwwroot/plunk/script'))
+gulp.task('copy:html', function () {
+    gulp.src(pathshtml.scripts).pipe(gulp.dest('wwwroot/app'))
 })
-gulp.task('watch:plunk', function () {
-    gulp.watch('plunk/**/*.ts', ['copy:plunk']);
-})
-gulp.task('Copyhtml:plunk', function () {
-    gulp.src(plunk.html).pipe(gulp.dest('wwwroot/plunk/html'))
+gulp.task('watch:html', function () {
+    gulp.watch(pathshtml.scripts, ['copy:html']);
 
-})
+});
+var gutil = require('gutil');
+var webpack = require('webpack');
+var config = require('./webpack.config');
+
+gulp.task('default1', function (callback) {
+    webpack(config, function (error, stats) {
+        if (error) throw new gutil.PluginError('webpack', error);
+        gutil.log('[webpack]', stats.toString());
+
+        callback();
+    });
+});
+
+var libs = ['node_modules/angular2/bundles/angular2.js',
+'node_modules/angular2/bundles/angular2-polyfills.js',
+'node_modules/systemjs/dist/system.src.js',
+'node_modules/rxjs/bundles/Rx.js'
+, 'node_modules/core-js/client/shim.min.js'
+, 'node_modules/zone.js/dist/zone.js'
+, 'node_modules/reflect-metadata/Reflect.js']
+
+var js = '.js';
+var node_modules = [
+'node_modules/rxjs/**/*'
+, 'node_modules/zone.js/**/*' + js
+, 'node_modules/@angular/**/*' + js
+, 'node_modules/es6-shim/**/*' + js
+, 'node_modules/reflect-metadata/**/*' + js
+, 'node_modules/systemjs/**/*' + js
+, 'node_modules/core-js/**/*' + js
+, 'node_modules/symbol-observable/**/*' + js
+, 'node_modules/@ng-bootstrap/**/*' + js
+
+];
+gulp.task('node_module', function (callback) {
+    gulp.src(libs).pipe(gulp.dest("./wwwroot/lib"));
+    console.log("SSMessage : Loading Libraries End");
+
+    console.log("SSMessage : Loading node_modules Start");
+    gulp.src(node_modules, { "base": "." }).pipe(gulp.dest("./wwwroot/"));
+});

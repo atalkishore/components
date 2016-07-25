@@ -9,22 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var loadindicator_service_1 = require("./loadingindicator/loadindicator.service");
-var AppComponent = (function () {
-    function AppComponent(loadingService) {
+//import {StatsService} from "../../services/stats-service";
+var loading_component_1 = require("./loading.component");
+var loadindicator_service_1 = require("./loadindicator.service");
+var StatsOverviewPage = (function () {
+    function StatsOverviewPage(loadingService) {
         this.loadingService = loadingService;
+        this.isShow = false;
+        this.stats = [];
     }
-    AppComponent = __decorate([
+    StatsOverviewPage.prototype.onPageLoaded = function (isShow) {
+        this.isShow = !isShow;
+        debugger;
+        this.loadingService.toggleLoadingIndicator(this.isShow);
+    };
+    StatsOverviewPage = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <router-outlet></router-outlet>\n  ",
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [loadindicator_service_1.LoadingService]
+            templateUrl: "/app/LoadingIndicator/loading.html",
+            directives: [loading_component_1.LoadingIndicator]
         }), 
         __metadata('design:paramtypes', [loadindicator_service_1.LoadingService])
-    ], AppComponent);
-    return AppComponent;
+    ], StatsOverviewPage);
+    return StatsOverviewPage;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.StatsOverviewPage = StatsOverviewPage;
+//# sourceMappingURL=page.component.js.map

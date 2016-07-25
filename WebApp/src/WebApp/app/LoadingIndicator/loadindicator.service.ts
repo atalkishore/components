@@ -1,4 +1,7 @@
-﻿import {Observable} from "rxjs/Observable";
+﻿import { Injectable } from '@angular/core';
+
+
+import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
 import 'rxjs/add/operator/share';
 
@@ -10,8 +13,8 @@ export class LoadingService {
     private _observer: Observer<String>;
 
     constructor() {
-        this.loading$ = new Observable<String>(
-            observer => this._observer = observer).share();
+        this.loading$ = new Observable(
+            observer => this._observer = observer);
     }
 
     toggleLoadingIndicator(name) {
@@ -20,12 +23,3 @@ export class LoadingService {
         }
     }
 }
-
-@App({
-    providers: [LoadingService],
-    template: `
-      <ion-nav #content [root]="rootPage"></ion-nav>
-  `,
-    config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-    prodMode: true
-});
