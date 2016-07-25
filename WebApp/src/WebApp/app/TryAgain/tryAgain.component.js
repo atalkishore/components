@@ -10,39 +10,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
-var loadindicator_service_1 = require("./loadindicator.service");
-var LoadingIndicator = (function () {
+var tryagain_service_1 = require("./tryagain.service");
+var TryagainIndicator = (function () {
     //we probably want a reference to ElementRef here to do some DOM manipulations
-    function LoadingIndicator(el, loadingService) {
+    function TryagainIndicator(el, loadingService) {
         this.el = el;
         this.loadingService = loadingService;
         this.isLoading = false;
     }
-    LoadingIndicator.prototype.showOrHideLoadingIndicator = function (loading) {
+    TryagainIndicator.prototype.showOrHideLoadingIndicator = function (loading) {
         this.isLoading = loading;
         if (this.isLoading)
             this.playLoadingAnimation();
         //else cancel the animation?
     };
-    LoadingIndicator.prototype.playLoadingAnimation = function () {
+    TryagainIndicator.prototype.playLoadingAnimation = function () {
         //this will be your implementation to start the loading animation
     };
-    LoadingIndicator.prototype.ngOnInit = function () {
+    TryagainIndicator.prototype.ngOnInit = function () {
         var _this = this;
         this.subscription = this.loadingService.loading$.subscribe(function (loading) { _this.showOrHideLoadingIndicator(loading); });
     };
-    LoadingIndicator.prototype.ngOnDestroy = function () {
+    TryagainIndicator.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
     };
-    LoadingIndicator = __decorate([
+    TryagainIndicator = __decorate([
         core_1.Component({
-            selector: 'loading-indicator',
+            selector: 'try-again',
             directives: [common_1.CORE_DIRECTIVES],
-            template: "\n       <div [style.visibility]=\"isLoading ? 'visible': 'hidden'\" class=\"loading-indicator-container\">           \n            <img src=\"/images/loading.gif\" />\n       </div>\n      ",
+            template: "<div [style.visibility]=\"isLoading ? 'visible': 'hidden'\" class=\"loading-indicator-container\">\n       <button class=\"btn btn-primary\" (click)=\"TryAgain()\" >Try again</button></div>\n      ",
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, loadindicator_service_1.LoadingService])
-    ], LoadingIndicator);
-    return LoadingIndicator;
+        __metadata('design:paramtypes', [core_1.ElementRef, tryagain_service_1.TryagainService])
+    ], TryagainIndicator);
+    return TryagainIndicator;
 }());
-exports.LoadingIndicator = LoadingIndicator;
-//# sourceMappingURL=loading.component.js.map
+exports.TryagainIndicator = TryagainIndicator;
+//# sourceMappingURL=tryagain.component.js.map

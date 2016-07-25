@@ -1,5 +1,6 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { StatsOverviewPage }  from "./loadingindicator/page.component";
+import { TryAgainPage }  from "./tryagain/demo.component";
 
 export const routes: RouterConfig = [
     {
@@ -10,6 +11,10 @@ export const routes: RouterConfig = [
     {
         path: 'loadingindicator',
         component: StatsOverviewPage
+    },
+    {
+        path: 'tryagain1',
+        component: TryAgainPage
     },
 ];
 

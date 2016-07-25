@@ -5,7 +5,7 @@ import { LoadingService } from "./loadindicator.service";
 
 
 @Component({
-    templateUrl: "/app/LoadingIndicator/loading.html",
+    templateUrl: "/app/LoadingIndicator/loading.html", 
     directives: [LoadingIndicator]
 })
 export class StatsOverviewPage {
@@ -14,10 +14,21 @@ export class StatsOverviewPage {
 
     constructor( private loadingService: LoadingService) { }
 
-    onPageLoaded(isShow: boolean): void {
-        this.isShow = !isShow;
-        debugger
-        this.loadingService.toggleLoadingIndicator(this.isShow);
+    onPageLoaded(): void {
+        //this.isShow = !isShow
+        this.loadingService.toggleLoadingIndicator(true);
+
+        //this.loadingService.toggleLoadingIndicator(this.isShow);
+        //setTimeout(2000);
+        this.getDataSlowly().then(response => {
+            
+            this.loadingService.toggleLoadingIndicator(false);
+        });
        
+    }
+    getDataSlowly() {
+        
+        return new Promise<boolean>(resolve => setTimeout(() => resolve(true), 2000));
+         // 2 seconds
     }
 }

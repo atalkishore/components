@@ -9,37 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import {StatsService} from "../../services/stats-service";
-var loading_component_1 = require("./loading.component");
-var loadindicator_service_1 = require("./loadindicator.service");
-var StatsOverviewPage = (function () {
-    function StatsOverviewPage(loadingService) {
+var tryagain_service_1 = require("./tryagain.service");
+var TryAgainPage = (function () {
+    function TryAgainPage(loadingService) {
         this.loadingService = loadingService;
-        this.isShow = false;
+        this.isShow = true;
         this.stats = [];
     }
-    StatsOverviewPage.prototype.onPageLoaded = function () {
+    TryAgainPage.prototype.onPageLoaded = function () {
         var _this = this;
         //this.isShow = !isShow
-        this.loadingService.toggleLoadingIndicator(true);
+        this.isShow = false;
         //this.loadingService.toggleLoadingIndicator(this.isShow);
         //setTimeout(2000);
         this.getDataSlowly().then(function (response) {
-            _this.loadingService.toggleLoadingIndicator(false);
+            _this.isShow = true;
         });
     };
-    StatsOverviewPage.prototype.getDataSlowly = function () {
-        return new Promise(function (resolve) { return setTimeout(function () { return resolve(true); }, 2000); });
+    TryAgainPage.prototype.TryAgain = function () {
+        this.onPageLoaded();
+    };
+    TryAgainPage.prototype.getDataSlowly = function () {
+        return new Promise(function (resolve) { return setTimeout(function () { return resolve(true); }, 3000); });
         // 2 seconds
     };
-    StatsOverviewPage = __decorate([
+    TryAgainPage = __decorate([
         core_1.Component({
-            templateUrl: "/app/LoadingIndicator/loading.html",
-            directives: [loading_component_1.LoadingIndicator]
+            template: "<div [style.visibility]=\"isShow ? 'visible': 'hidden'\" class=\"loading-indicator-container\">\n       <button class=\"btn btn-primary\" (click)=\"TryAgain()\" >Try again</button></div>",
         }), 
-        __metadata('design:paramtypes', [loadindicator_service_1.LoadingService])
-    ], StatsOverviewPage);
-    return StatsOverviewPage;
+        __metadata('design:paramtypes', [tryagain_service_1.TryagainService])
+    ], TryAgainPage);
+    return TryAgainPage;
 }());
-exports.StatsOverviewPage = StatsOverviewPage;
-//# sourceMappingURL=page.component.js.map
+exports.TryAgainPage = TryAgainPage;
+//# sourceMappingURL=demo.component.js.map

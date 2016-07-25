@@ -1,6 +1,7 @@
 "use strict";
 var router_1 = require('@angular/router');
 var page_component_1 = require("./loadingindicator/page.component");
+var demo_component_1 = require("./tryagain/demo.component");
 exports.routes = [
     {
         path: '',
@@ -10,6 +11,10 @@ exports.routes = [
     {
         path: 'loadingindicator',
         component: page_component_1.StatsOverviewPage
+    },
+    {
+        path: 'tryagain1',
+        component: demo_component_1.TryAgainPage
     },
 ];
 exports.APP_ROUTER_PROVIDERS = [
