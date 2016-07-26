@@ -1,6 +1,8 @@
+/// <reference path="styleconfig/style.component.ts" />
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { StatsOverviewPage }  from "./loadingindicator/page.component";
 import { TryAgainPage }  from "./tryagain/demo.component";
+import { StyleComponent }  from "./styleconfig/style.component";
 
 export const routes: RouterConfig = [
     {
@@ -13,8 +15,12 @@ export const routes: RouterConfig = [
         component: StatsOverviewPage
     },
     {
-        path: 'tryagain1',
+        path: 'tryagain',
         component: TryAgainPage
+    },
+    {
+        path: 'style',
+        component: StyleComponent
     },
 ];
 

@@ -1,7 +1,9 @@
 "use strict";
+/// <reference path="styleconfig/style.component.ts" />
 var router_1 = require('@angular/router');
 var page_component_1 = require("./loadingindicator/page.component");
 var demo_component_1 = require("./tryagain/demo.component");
+var style_component_1 = require("./styleconfig/style.component");
 exports.routes = [
     {
         path: '',
@@ -13,8 +15,12 @@ exports.routes = [
         component: page_component_1.StatsOverviewPage
     },
     {
-        path: 'tryagain1',
+        path: 'tryagain',
         component: demo_component_1.TryAgainPage
+    },
+    {
+        path: 'style',
+        component: style_component_1.StyleComponent
     },
 ];
 exports.APP_ROUTER_PROVIDERS = [

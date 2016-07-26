@@ -1,7 +1,5 @@
 ﻿import {Component, ElementRef, OnInit, OnDestroy} from '@angular/core';
 //import {StatsService} from "../../services/stats-service";
-import { TryagainIndicator } from "./tryagain.component";
-import { TryagainService } from "./tryagain.service";
 
 
 @Component({
@@ -12,7 +10,7 @@ export class TryAgainPage {
     isShow: boolean = true;
     private stats: Array<any> = [];
 
-    constructor(private loadingService: TryagainService) { }
+    constructor() { }
 
     onPageLoaded(): void {
         //this.isShow = !isShow

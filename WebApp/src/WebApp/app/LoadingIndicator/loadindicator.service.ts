@@ -13,7 +13,7 @@ export class LoadingService {
     private _observer: Observer<String>;
 
     constructor() {
-        this.loading$ = new Observable(
+        this.loading$ = new Observable<String>(
             observer => this._observer = observer);
     }
 

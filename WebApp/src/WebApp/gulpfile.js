@@ -39,7 +39,7 @@ gulp.task('watch:ang', function () {
 });
 
 var pathshtml = {
-    scripts: ['app/**/*.html', 'app/*.html'],
+    scripts: ['app/**/*.html', 'app/*.html', 'app/**/*.css', 'app/*.css'],
    
 };
 gulp.task('copy:html', function () {
@@ -90,3 +90,4 @@ gulp.task('node_module', function (callback) {
     console.log("SSMessage : Loading node_modules Start");
     gulp.src(node_modules, { "base": "." }).pipe(gulp.dest("./wwwroot/"));
 });
+

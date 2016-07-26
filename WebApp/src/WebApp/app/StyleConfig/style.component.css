@@ -1,0 +1,13 @@
+﻿
+.fa{
+    font-size:17px;
+}
+.btn-add
+{
+    width:150px;
+    border:1px dashed #aaa;
+    text-align:center;
+    height:30px;
+    line-height:16px;
+    background-color:#eee;
+}

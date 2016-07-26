@@ -9,10 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var tryagain_service_1 = require("./tryagain.service");
+//import {StatsService} from "../../services/stats-service";
 var TryAgainPage = (function () {
-    function TryAgainPage(loadingService) {
-        this.loadingService = loadingService;
+    function TryAgainPage() {
         this.isShow = true;
         this.stats = [];
     }
@@ -37,7 +36,7 @@ var TryAgainPage = (function () {
         core_1.Component({
             template: "<div [style.visibility]=\"isShow ? 'visible': 'hidden'\" class=\"loading-indicator-container\">\n       <button class=\"btn btn-primary\" (click)=\"TryAgain()\" >Try again</button></div>",
         }), 
-        __metadata('design:paramtypes', [tryagain_service_1.TryagainService])
+        __metadata('design:paramtypes', [])
     ], TryAgainPage);
     return TryAgainPage;
 }());
