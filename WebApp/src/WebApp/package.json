@@ -25,13 +25,13 @@
     "zone.js": "0.6.12",
     "gutil": "1.6.4",
     "angular2-template-loader": "0.4.0",
-    "css-loader":"0.23.1",
+    "css-loader": "0.23.1",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "html-loader": "0.4.3",
-    "html-webpack-plugin":"2.22.0",
-    "jasmine-core":"2.4.1",
-    "null-loader":"0.1.1",
+    "html-webpack-plugin": "2.22.0",
+    "jasmine-core": "2.4.1",
+    "null-loader": "0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
@@ -40,6 +40,7 @@
     "typescript": "1.8.10",
     "typings": "^1.0.4",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.14.0"
+    "webpack-merge": "^0.14.0",
+    "gulp-autoprefixer": "3.1.0"
   }
 }

@@ -6,6 +6,7 @@ var gulp = require("gulp"),
     concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify");
+    //sassCompile = require("gulp-sass");
 var webroot = "./wwwroot/";
 
 var paths = {
@@ -91,3 +92,21 @@ gulp.task('node_module', function (callback) {
     gulp.src(node_modules, { "base": "." }).pipe(gulp.dest("./wwwroot/"));
 });
 
+//var pathssass = {
+//    scripts: ['app/**/*.scss', 'app/*.scss', 'app/**/*.scss', 'app/*.scss'],
+
+//};
+//var auto_prefixer = require("gulp-autoprefixer");;
+//gulp.task('copy:sass', function (callback) {
+//        //plugins.rimraf('wwwroot/css/*', cb);
+
+
+//    gulp.src(pathssass.scripts)
+//        .pipe(sassCompile.sass())
+//        .pipe(auto_prefixer.autoprefixer())
+//        .pipe(gulp.dest('wwwroot/css'));
+//});
+//gulp.task('watch:sass', function () {
+//    gulp.watch(pathssass.scripts, ['copy:sass']);
+
+//});

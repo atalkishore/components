@@ -1,0 +1,17 @@
+﻿a.menu-item {
+    border: 1px solid #ddd;
+    padding:10px;
+    margin:-2px;
+    color:#555;
+    background-color:#eee;
+    line-height:39px;
+    text-decoration:none;
+}
+
+    a.menu-item:not(:last-child) {
+        border-right: none;
+    }
+    a.menu-item:hover {
+        color:#000;
+    }
+
