@@ -82,6 +82,7 @@ var node_modules = [
 , 'node_modules/core-js/**/*' + js
 , 'node_modules/symbol-observable/**/*' + js
 , 'node_modules/@ng-bootstrap/**/*' + js
+, 'node_modules/ng2-toastr/**/*' + js
 
 ];
 gulp.task('node_module', function (callback) {

@@ -12,7 +12,8 @@
         'angular2-in-memory-web-api': '/node_modules/angular2-in-memory-web-api',
         'rxjs': '/node_modules/rxjs',
         'symbol-observable': '/node_modules/symbol-observable',
-        '@ng-bootstrap/ng-bootstrap': '/node_modules/@ng-bootstrap/ng-bootstrap'
+        '@ng-bootstrap/ng-bootstrap': '/node_modules/@ng-bootstrap/ng-bootstrap',
+        'ng2-toastr': '/node_modules/ng2-toastr'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -21,7 +22,8 @@
         'rxjs': { defaultExtension: 'js' },
         'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
         'symbol-observable': { defaultExtension: 'js', main: 'index.js' },
-        '@ng-bootstrap/ng-bootstrap': { defaultExtension: 'js', main: 'index.js' }
+        '@ng-bootstrap/ng-bootstrap': { defaultExtension: 'js', main: 'index.js' },
+        'ng2-toastr': { defaultExtension: 'js' }
     };
 
     var ngPackageNames = [

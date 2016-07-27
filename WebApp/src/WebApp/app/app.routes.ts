@@ -1,8 +1,10 @@
+/// <reference path="toast/toastdemo.component.ts" />
 /// <reference path="styleconfig/style.component.ts" />
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { StatsOverviewPage }  from "./loadingindicator/page.component";
 import { TryAgainPage }  from "./tryagain/demo.component";
 import { StyleComponent }  from "./styleconfig/style.component";
+import { ToastComponent }  from "./toast/toastdemo.component";
 
 export const routes: RouterConfig = [
     {
@@ -21,6 +23,10 @@ export const routes: RouterConfig = [
     {
         path: 'style',
         component: StyleComponent
+    },
+    {
+        path: 'toast',
+        component: ToastComponent
     },
 ];
 
