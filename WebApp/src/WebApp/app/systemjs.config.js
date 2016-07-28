@@ -13,7 +13,9 @@
         'rxjs': '/node_modules/rxjs',
         'symbol-observable': '/node_modules/symbol-observable',
         '@ng-bootstrap/ng-bootstrap': '/node_modules/@ng-bootstrap/ng-bootstrap',
-        'ng2-toastr': '/node_modules/ng2-toastr'
+        'ng2-toastr': '/node_modules/ng2-toastr',
+        'angular2-modal': '/node_modules/angular2-modal',
+        'angular2-modal/platform-browser': '/node_modules/angular2-modal/platform-browser'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -23,7 +25,12 @@
         'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
         'symbol-observable': { defaultExtension: 'js', main: 'index.js' },
         '@ng-bootstrap/ng-bootstrap': { defaultExtension: 'js', main: 'index.js' },
-        'ng2-toastr': { defaultExtension: 'js' }
+        'ng2-toastr': { defaultExtension: 'js' },
+        'angular2-modal': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/platform-browser': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/plugins/bootstrap': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/plugins/vex': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-modal/plugins/js-native': { main: 'index.js', defaultExtension: 'js' }
     };
 
     var ngPackageNames = [

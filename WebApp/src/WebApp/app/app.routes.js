@@ -1,11 +1,13 @@
 "use strict";
 /// <reference path="toast/toastdemo.component.ts" />
 /// <reference path="styleconfig/style.component.ts" />
+/// <reference path="modal/modal.component.ts" />
 var router_1 = require('@angular/router');
 var page_component_1 = require("./loadingindicator/page.component");
 var demo_component_1 = require("./tryagain/demo.component");
 var style_component_1 = require("./styleconfig/style.component");
 var toastdemo_component_1 = require("./toast/toastdemo.component");
+var modal_component_1 = require("./modal/modal.component");
 exports.routes = [
     {
         path: '',
@@ -27,6 +29,10 @@ exports.routes = [
     {
         path: 'toast',
         component: toastdemo_component_1.ToastComponent
+    },
+    {
+        path: 'modal',
+        component: modal_component_1.ModalComponent
     },
 ];
 exports.APP_ROUTER_PROVIDERS = [

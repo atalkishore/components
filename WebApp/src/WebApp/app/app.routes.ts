@@ -1,10 +1,12 @@
 /// <reference path="toast/toastdemo.component.ts" />
 /// <reference path="styleconfig/style.component.ts" />
+/// <reference path="modal/modal.component.ts" />
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { StatsOverviewPage }  from "./loadingindicator/page.component";
 import { TryAgainPage }  from "./tryagain/demo.component";
 import { StyleComponent }  from "./styleconfig/style.component";
 import { ToastComponent }  from "./toast/toastdemo.component";
+import { ModalComponent }  from "./modal/modal.component";
 
 export const routes: RouterConfig = [
     {
@@ -27,6 +29,10 @@ export const routes: RouterConfig = [
     {
         path: 'toast',
         component: ToastComponent
+    },
+    {
+        path: 'modal',
+        component: ModalComponent
     },
 ];
 

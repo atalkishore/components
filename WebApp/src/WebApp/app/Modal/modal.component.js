@@ -9,26 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var bootstrap_1 = require('angular2-modal/plugins/bootstrap');
-var loadindicator_service_1 = require("./loadingindicator/loadindicator.service");
-var AppComponent = (function () {
-    function AppComponent(loadingService, modal, viewContainer) {
-        this.loadingService = loadingService;
+/*
+ * App Component
+ * Top Level Component
+ */
+var ModalComponent = (function () {
+    function ModalComponent(modal, viewContainer) {
         this.modal = modal;
         modal.defaultViewContainer = viewContainer;
     }
-    AppComponent = __decorate([
+    ModalComponent.prototype.openAlert = function () {
+        return this.modal.alert()
+            .size('lg')
+            .showClose(true)
+            .title('A simple Alert style modal window')
+            .open();
+    };
+    ModalComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <router-outlet></router-outlet>\n  ",
+            selector: 'modal-sel',
             viewProviders: bootstrap_1.BS_MODAL_PROVIDERS.slice(),
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [loadindicator_service_1.LoadingService]
+            templateUrl: '/app/Modal/modal.component.html'
         }), 
-        __metadata('design:paramtypes', [loadindicator_service_1.LoadingService, bootstrap_1.Modal, core_1.ViewContainerRef])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [bootstrap_1.Modal, core_1.ViewContainerRef])
+    ], ModalComponent);
+    return ModalComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ModalComponent = ModalComponent;
+//# sourceMappingURL=modal.component.js.map
