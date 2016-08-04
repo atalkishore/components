@@ -1,0 +1,37 @@
+﻿<form [formGroup]="form" (ngSubmit)="submit()">
+    <p>Choose</p>
+    <div>
+        <label >
+            <input name="maleOrFemale" type="radio" [value]="'male'"
+                   [formControl]="form.controls['maleOrFemale'].controls['male']" [(ngModel)]="rdvalue">
+            Male
+        </label>
+        <label>
+            <input name="maleOrFemale" type="radio" [value]="'female'"
+                   [formControl]="form.controls['maleOrFemale'].controls['female']" [(ngModel)]="rdvalue">
+            Female
+        </label>
+        | Group valid: {{form.controls['maleOrFemale'].valid}} value:{{rdvalue}} not selected:{{form.controls['maleOrFemale'].noSelection}}
+         dirty:{{form.controls['maleOrFemale'].dirty}} {{form.controls['maleOrFemale'].controls['male'].valid}} {{form.controls['maleOrFemale'].controls['female'].valid}}
+    </div>
+    <div>
+        <input type="text"
+               [formControl]="form.controls['text']" [(ngModel)]="textval"><br />
+        | Group valid: {{form.controls['text'].valid}} value:{{textval}}  touched: {{form.controls['text'].touched}} dirty:{{form.controls['text'].dirty}}
+    </div>
+    <!--<div>
+        <label>
+            <input type="radio" name="color"
+                   [ngFormControl]="form.controls['blackOrWhite'].controls['black']">
+            Black
+        </label>
+        <label>
+            <input type="radio" name="color"
+                   [ngFormControl]="form.controls['blackOrWhite'].controls['white']">
+            White
+        </label>
+        | Group valid:
+    </div>-->
+    <button type="submit">Submit</button>
+    <div>Form dirty: {{form.dirty}}, Form valid: {{form.valid}}</div>
+</form>
