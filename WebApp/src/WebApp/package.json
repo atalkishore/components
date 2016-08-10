@@ -64,5 +64,8 @@
     "gulp-autoprefixer": "3.1.0",
     "ng2-toastr": "0.3.1",
     "angular2-modal": "1.0.9"
+  },
+  "scripts": {
+    "postinstall": "typings install"
   }
 }

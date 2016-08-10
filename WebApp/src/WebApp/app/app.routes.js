@@ -1,4 +1,5 @@
 "use strict";
+/// <reference path="angularmaterial/demo-app/routes.ts" />
 /// <reference path="toast/toastdemo.component.ts" />
 /// <reference path="styleconfig/style.component.ts" />
 /// <reference path="modal/modal.component.ts" />
@@ -10,12 +11,8 @@ var style_component_1 = require("./styleconfig/style.component");
 var toastdemo_component_1 = require("./toast/toastdemo.component");
 var modal_component_1 = require("./modal/modal.component");
 var form_component_1 = require("./form/form.component");
+var routes_1 = require("./angularmaterial/demo-app/routes");
 exports.routes = [
-    {
-        path: '',
-        redirectTo: '/loadingindicator',
-        pathMatch: 'full'
-    },
     {
         path: 'loadingindicator',
         component: page_component_1.StatsOverviewPage
@@ -39,8 +36,8 @@ exports.routes = [
     {
         path: 'form',
         component: form_component_1.FormComponent
-    },
-];
+    }
+].concat(routes_1.DEMO_APP_ROUTE_PROVIDER);
 exports.APP_ROUTER_PROVIDERS = [
     router_1.provideRouter(exports.routes)
 ];

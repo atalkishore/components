@@ -1,3 +1,4 @@
+/// <reference path="angularmaterial/demo-app/routes.ts" />
 /// <reference path="toast/toastdemo.component.ts" />
 /// <reference path="styleconfig/style.component.ts" />
 /// <reference path="modal/modal.component.ts" />
@@ -9,13 +10,10 @@ import { StyleComponent }  from "./styleconfig/style.component";
 import { ToastComponent }  from "./toast/toastdemo.component";
 import { ModalComponent }  from "./modal/modal.component";
 import { FormComponent }  from "./form/form.component";
+import { DEMO_APP_ROUTE_PROVIDER }  from "./angularmaterial/demo-app/routes";
 
 export const routes: RouterConfig = [
-    {
-        path: '',
-        redirectTo: '/loadingindicator',
-        pathMatch: 'full'
-    },
+    
     {
         path: 'loadingindicator',
         component: StatsOverviewPage
@@ -40,6 +38,7 @@ export const routes: RouterConfig = [
         path: 'form',
         component: FormComponent
     },
+    ...DEMO_APP_ROUTE_PROVIDER
 ];
 
 export const APP_ROUTER_PROVIDERS = [

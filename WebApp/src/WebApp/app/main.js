@@ -1,4 +1,6 @@
 "use strict";
+/// <reference path="../typings/globals/es6-shim/index.d.ts" />
+/// <reference path="../typings/index.d.ts" />
 // The usual bootstrapping imports
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var http_1 = require('@angular/http');

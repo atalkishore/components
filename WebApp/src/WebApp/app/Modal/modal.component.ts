@@ -22,13 +22,6 @@ export class ModalComponent {
             .title('A simple Alert style modal window')
             .open();
     }
-    openPrompt() {
-        return this.modal.prompt()
-            .className('wireframe')
-            .message('Enter your name')
-            .placeholder('Your name here')
-            .open();
-    }
     openConfirm() {
         return this.modal.confirm()
             .message('Enter your name')

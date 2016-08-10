@@ -26,6 +26,11 @@ var ModalComponent = (function () {
             .title('A simple Alert style modal window')
             .open();
     };
+    ModalComponent.prototype.openConfirm = function () {
+        return this.modal.confirm()
+            .message('Enter your name')
+            .open();
+    };
     ModalComponent = __decorate([
         core_1.Component({
             selector: 'modal-sel',
