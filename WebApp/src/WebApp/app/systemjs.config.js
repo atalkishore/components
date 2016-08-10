@@ -15,7 +15,8 @@
         '@ng-bootstrap/ng-bootstrap': '/node_modules/@ng-bootstrap/ng-bootstrap',
         'ng2-toastr': '/node_modules/ng2-toastr',
         'angular2-modal': '/node_modules/angular2-modal',
-        'angular2-modal/platform-browser': '/node_modules/angular2-modal/platform-browser'
+        'angular2-modal/platform-browser': '/node_modules/angular2-modal/platform-browser',
+        '@angular2-material': '/node_modules/@angular2-material'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -50,7 +51,31 @@
     function packIndex(pkgName) {
         packages['@angular/' + pkgName] = { main: 'index.js', defaultExtension: 'js' };
     }
+    var ngMaterialPkgs = [
+    'button',
+    'button-toggle',
+    'card',
+    'checkbox',
+    'core',
+    'grid-list',
+    'icon',
+    'input',
+    'list',
+    'menu',
+    'progress-bar',
+    'progress-circle',
+    'radio',
+    'sidenav',
+    'slider',
+    'slide-toggle',
+    'tabs',
+    'toolbar',
+    'tooltip'
+    ];
 
+    function materialPkgs(pkgName) {
+        packages['@angular2-material/' + pkgName] = { main: pkgName+'.js', defaultExtension: 'js' };
+    }
     // Bundled (~40 requests):
     function packUmd(pkgName) {
         packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
@@ -62,6 +87,7 @@
     // Add package entries for angular packages
     ngPackageNames.forEach(setPackageConfig);
 
+    ngMaterialPkgs.forEach(materialPkgs);
     // No umd for router yet
     packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
 

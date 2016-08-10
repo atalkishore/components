@@ -84,7 +84,7 @@ var node_modules = [
 , 'node_modules/@ng-bootstrap/**/*' + js
 , 'node_modules/ng2-toastr/**/*' + js
 , 'node_modules/angular2-modal/**/*' + js
-
+, 'node_modules/@angular2-material/**/*' + js
 ];
 gulp.task('node_module', function (callback) {
     gulp.src(libs).pipe(gulp.dest("./wwwroot/lib"));
