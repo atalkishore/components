@@ -37,7 +37,7 @@ exports.routes = [
         path: 'form',
         component: form_component_1.FormComponent
     }
-].concat(routes_1.DEMO_APP_ROUTE_PROVIDER);
+].concat(routes_1.routesmaterial);
 exports.APP_ROUTER_PROVIDERS = [
     router_1.provideRouter(exports.routes)
 ];

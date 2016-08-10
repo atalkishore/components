@@ -72,7 +72,12 @@ var libs = ['node_modules/angular2/bundles/angular2.js',
 , 'node_modules/reflect-metadata/Reflect.js']
 
 var js = '.js';
+
 var node_modules = [
+];
+function loadNode(js)
+{
+    node_modules = [
 'node_modules/rxjs/**/*'
 , 'node_modules/zone.js/**/*' + js
 , 'node_modules/@angular/**/*' + js
@@ -85,10 +90,16 @@ var node_modules = [
 , 'node_modules/ng2-toastr/**/*' + js
 , 'node_modules/angular2-modal/**/*' + js
 , 'node_modules/@angular2-material/**/*' + js
-];
+    ];
+}
 gulp.task('node_module', function (callback) {
     gulp.src(libs).pipe(gulp.dest("./wwwroot/lib"));
     console.log("SSMessage : Loading Libraries End");
+    loadNode(js);
+    console.log("SSMessage : Loading node_modules Start");
+    gulp.src(node_modules, { "base": "." }).pipe(gulp.dest("./wwwroot/"));
+    js = '.css';
+    loadNode(js);
 
     console.log("SSMessage : Loading node_modules Start");
     gulp.src(node_modules, { "base": "." }).pipe(gulp.dest("./wwwroot/"));

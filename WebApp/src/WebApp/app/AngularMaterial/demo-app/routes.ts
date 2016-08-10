@@ -1,4 +1,4 @@
-import {provideRouter, RouterConfig} from '@angular/router';
+import {provideRouter, Routes} from '@angular/router';
 import {Home} from './demo-app';
 import {ButtonDemo} from '../button/button-demo';
 import {BaselineDemo} from '../baseline/baseline-demo';
@@ -26,32 +26,32 @@ import {RippleDemo} from '../ripple/ripple-demo';
 import {TooltipDemo} from '../tooltip/tooltip-demo';
 
 
-export const routes: RouterConfig = [
+export const routesmaterial: Routes = [
   {path: '', component: Home},
   {path: 'button', component: ButtonDemo},
-  {path: 'card', component: CardDemo},
-  {path: 'radio', component: RadioDemo},
-  {path: 'sidenav', component: SidenavDemo},
-  {path: 'slide-toggle', component: SlideToggleDemo},
-  {path: 'slider', component: SliderDemo},
-  {path: 'progress-circle', component: ProgressCircleDemo},
-  {path: 'progress-bar', component: ProgressBarDemo},
-  {path: 'portal', component: PortalDemo},
-  {path: 'overlay', component: OverlayDemo},
-  {path: 'checkbox', component: CheckboxDemo},
-  {path: 'input', component: InputDemo},
-  {path: 'toolbar', component: ToolbarDemo},
-  {path: 'icon', component: IconDemo},
-  {path: 'list', component: ListDemo},
-  {path: 'menu', component: MenuDemo},
-  {path: 'live-announcer', component: LiveAnnouncerDemo},
-  {path: 'gestures', component: GesturesDemo},
-  {path: 'grid-list', component: GridListDemo},
-  {path: 'tabs', component: TabsDemo},
-  {path: 'button-toggle', component: ButtonToggleDemo},
-  {path: 'baseline', component: BaselineDemo},
-  {path: 'ripple', component: RippleDemo},
-  {path: 'tooltip', component: TooltipDemo},
+  //{path: 'card', component: CardDemo},
+  //{path: 'radio', component: RadioDemo},
+  //{path: 'sidenav', component: SidenavDemo},
+  //{path: 'slide-toggle', component: SlideToggleDemo},
+  //{path: 'slider', component: SliderDemo},
+  //{path: 'progress-circle', component: ProgressCircleDemo},
+  //{path: 'progress-bar', component: ProgressBarDemo},
+  //{path: 'portal', component: PortalDemo},
+  //{path: 'overlay', component: OverlayDemo},
+  //{path: 'checkbox', component: CheckboxDemo},
+  //{path: 'input', component: InputDemo},
+  //{path: 'toolbar', component: ToolbarDemo},
+  //{path: 'icon', component: IconDemo},
+  //{path: 'list', component: ListDemo},
+  //{path: 'menu', component: MenuDemo},
+  //{path: 'live-announcer', component: LiveAnnouncerDemo},
+  //{path: 'gestures', component: GesturesDemo},
+  //{path: 'grid-list', component: GridListDemo},
+  //{path: 'tabs', component: TabsDemo},
+  //{path: 'button-toggle', component: ButtonToggleDemo},
+  //{path: 'baseline', component: BaselineDemo},
+  //{path: 'ripple', component: RippleDemo},
+  //{path: 'tooltip', component: TooltipDemo},
 ];
 
-export const DEMO_APP_ROUTE_PROVIDER = provideRouter(routes);
+//export const DEMO_APP_ROUTE_PROVIDER = provideRouter(routes);

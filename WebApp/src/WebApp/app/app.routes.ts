@@ -3,16 +3,16 @@
 /// <reference path="styleconfig/style.component.ts" />
 /// <reference path="modal/modal.component.ts" />
 /// <reference path="form/form.component.ts" />
-import { provideRouter, RouterConfig }  from '@angular/router';
+import { provideRouter, Routes }  from '@angular/router';
 import { StatsOverviewPage }  from "./loadingindicator/page.component";
 import { TryAgainPage }  from "./tryagain/demo.component";
 import { StyleComponent }  from "./styleconfig/style.component";
 import { ToastComponent }  from "./toast/toastdemo.component";
 import { ModalComponent }  from "./modal/modal.component";
 import { FormComponent }  from "./form/form.component";
-import { DEMO_APP_ROUTE_PROVIDER }  from "./angularmaterial/demo-app/routes";
+import { routesmaterial }  from "./angularmaterial/demo-app/routes";
 
-export const routes: RouterConfig = [
+export const routes: Routes = [
     
     {
         path: 'loadingindicator',
@@ -38,7 +38,7 @@ export const routes: RouterConfig = [
         path: 'form',
         component: FormComponent
     },
-    ...DEMO_APP_ROUTE_PROVIDER
+    ...routesmaterial
 ];
 
 export const APP_ROUTER_PROVIDERS = [
