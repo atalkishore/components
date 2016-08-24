@@ -5,8 +5,8 @@ var gulp = require("gulp"),
     rimraf = require("rimraf"),
     concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
-    uglify = require("gulp-uglify");
-    //sassCompile = require("gulp-sass");
+    uglify = require("gulp-uglify"),
+    sass = require("gulp-sass");
 var webroot = "./wwwroot/";
 
 var paths = {
@@ -24,6 +24,7 @@ var paths = {
 var pathsAngular = {
     scripts: ['app/**/*.js', 'app/**/*.ts', 'app/**/*.map', 'app/*.js', 'app/*.ts', 'app/*.map'],
     copy: ['app/**/*.js', 'app/*.js'],
+    copyScss: ['app/**/**/*.scss','app/**/*.scss', 'app/*.scss'],
     libs: ['node_modules/angular2/bundles/angular2.js',
            'node_modules/angular2/bundles/angular2-polyfills.js',
            'node_modules/systemjs/dist/system.src.js',
@@ -38,7 +39,11 @@ gulp.task('watch:ang', function () {
     gulp.watch(pathsAngular.scripts, ['copy:ang']);
 
 });
-
+gulp.task('copyMaterial:sass', function () {
+    gulp.src(pathsAngular.copyScss)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('wwwroot/app'));
+});
 var pathshtml = {
     scripts: ['app/**/*.html', 'app/*.html', 'app/**/*.css', 'app/*.css'],
    
